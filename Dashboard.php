@@ -45,6 +45,6 @@ class Dashboard extends CI_Controller
 
 		$data['api'] = $id_media;
 
-		$this->load->view('dashboard/index', $data);
+		$this->load->view('index', $data);
 	}
 }
