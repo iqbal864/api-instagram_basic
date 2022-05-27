@@ -7,8 +7,8 @@ class Dashboard extends CI_Controller
 	public function index()
 	{
 		// Instagran API
-		$user_id = "17841402788276749";
-		$token = "IGQVJWcjhnLTlBeFVXME1JSlRjM2YwM29lWUNURnM1bjFYVm90b3hoWTQ4TVVBbVJPbU42bmhYQlN6bHJoM0E0b2I5V3lFcmJYZAnM1dVRaa1dvRWpqdWZATcVFxMWFUeDZAqeUMtMGVn";
+		$user_id = "178XXXXXXXXXXX";
+		$token = "IGQXXXXXXXXXXX";
 
 		$get_profile = file_get_contents('https://graph.instagram.com/v14.0/' . $user_id . '?fields=id,username&access_token=' . $token . '');
 		$get_profile_api = json_decode($get_profile);
