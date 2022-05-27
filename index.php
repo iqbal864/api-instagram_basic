@@ -71,86 +71,9 @@
 					</div>
 				<?php endforeach; ?>
 			</div>
-			<!-- <div class="row">
-  						<?php foreach ($project as $key => $proj) :
-								$id_project = $proj['id_project'];
-								$query1 = $this->db->query("SELECT sum(completion)/count(project_name) as total FROM data_project_detail WHERE id_project ='$id_project' ")->row_array(0);
-								$hasil = implode($query1);
-								if (round($hasil) >= 10 && round($hasil) <= 99) {
-									$h = '0.' . round($hasil);
-								} else if (round($hasil) <= 9) {
-									$h = '0.' . '0' . round($hasil);
-								} else {
-									$h = 1;
-								}
-
-								if ($hasil == 0) {
-									$progress = '0' . '%';
-								} else {
-									$progress = round($hasil) . '%';
-								}
-							?>
-  							<div class="col-md-4 col-sm-6 col-12">
-  								<a href="view_project?id_project=<?= $proj['id_project'] ?>" class="small-box-footer">
-  									<div class="info-box text-dark callout callout-info" style="background-color: #f8f9f9;">
-
-  										<div class="info-box-content">
-  											<div class="gauge float-right" id="gauge<?= $proj['id_project'] ?>">
-  												<div class="gauge__body">
-  													<div class="gauge__fill"></div>
-  													<div class="gauge__cover"></div>
-  												</div>
-  											</div>
-  											<script>
-  												const gaugeElement<?= $proj['id_project'] ?> = document.querySelector("#gauge<?= $proj['id_project'] ?>");
-
-  												function setGaugeValue(gauge, value) {
-  													if (value < 0 || value > 1) {
-  														return;
-  													}
-
-  													gauge.querySelector(".gauge__fill").style.transform = `rotate(${value / 2}turn)`;
-  													gauge.querySelector(".gauge__cover").textContent = `${Math.round(value * 100)}%`;
-  												}
-
-  												setGaugeValue(gaugeElement<?= $proj['id_project'] ?>, <?= $h ?>);
-  											</script>
-  											<h4 class="info-box-text"><?= $proj['title'] ?></h4>
-  											<span class="info-box-text"><?= $proj['responsible'] ?></span>
-
-  											<div class="progress" style="background-color: #f8f9f9;">
-  												<div class="progress-bar bg-info" style="width: 90%"></div>
-  											</div>
-  											<span class="progress-description">
-  												<?php
-													$tgl1 = new DateTime($proj['start_date']);
-													$tgl2 = new DateTime($proj['end_date']);
-													$d = $tgl2->diff($tgl1)->days + 1;
-													$duration = $d;
-													$time = new DateTime();
-													$day = $time->diff($tgl1)->days + 1;
-													$now = $day . "%";
-													?>
-  												<?php if (date("Y-m-d", strtotime($proj['end_date'])) < date("Y-m-d")) : ?>
-  													<?= $progress ?>, Has Ended
-  												<?php elseif (date("Y-m-d", strtotime($proj['start_date'])) > date("Y-m-d")) : ?>
-  													<?= $progress ?>, Not Started Yet
-  												<?php else : ?>
-  													<?= $progress ?> Increase in <?= $duration ?> Days
-  												<?php endif; ?>
-  											</span>
-  										</div>
-  									
-  									</div>
-  								</a>
-  							
-  							</div>
-  						<?php endforeach; ?>
-  					</div> -->
-
-
 			<!-- /.row -->
-		</div><!-- /.container-fluid -->
+		</div>
+		<!-- /.container-fluid -->
 	</section>
 	<!-- /.content -->
 </div>
