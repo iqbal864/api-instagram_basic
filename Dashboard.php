@@ -6,17 +6,6 @@ class Dashboard extends CI_Controller
 
 	public function index()
 	{
-		$this->load->model('Model_project');
-		if (empty($_GET)) {
-			$years = date("d-m-Y");
-			$tahun = date('Y', strtotime($years));
-		} else {
-			$tahun = date($_GET['tahun']);
-		}
-		$data = $this->Model_project->tampil_project($tahun);
-		json_encode($data);
-		$data['title'] = "Project Plan";
-
 		// Instagran API
 		$user_id = "17841402788276749";
 		$token = "IGQVJWcjhnLTlBeFVXME1JSlRjM2YwM29lWUNURnM1bjFYVm90b3hoWTQ4TVVBbVJPbU42bmhYQlN6bHJoM0E0b2I5V3lFcmJYZAnM1dVRaa1dvRWpqdWZATcVFxMWFUeDZAqeUMtMGVn";
@@ -56,19 +45,6 @@ class Dashboard extends CI_Controller
 
 		$data['api'] = $id_media;
 
-		// $get_data = file_get_contents('https://www.instagram.com/iqbalflh__/channel/?__a=1&page=2');
-
-		// $test = json_decode($get_data, true);
-
-
-
-		// $data['api2'] = $test;
-
-		// $data['test'] = json_decode($get_data, true);
-
-		$this->load->view('templates/template_header');
-		$this->load->view('templates/template_sidebar');
 		$this->load->view('dashboard/index', $data);
-		$this->load->view('templates/template_footer');
 	}
 }
