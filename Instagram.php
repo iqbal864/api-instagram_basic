@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller
+class Instagram extends CI_Controller
 {
 
 	public function index()
@@ -19,7 +19,9 @@ class Dashboard extends CI_Controller
 		$get_id_media_api = json_decode($get_id_media);
 
 		$id_media = [];
+		// Looping Postingan
 		foreach ($get_id_media_api->data as $id) {
+			// Jika Postingan Video
 			if ($id->media_type == "VIDEO") {
 				$id_media[] =  array(
 					'id' => $id->id,
@@ -31,6 +33,7 @@ class Dashboard extends CI_Controller
 					'timestamp' => $id->timestamp
 				);
 			} else {
+				// Jika Postingan Gambar
 				$id_media[] =  array(
 					'id' => $id->id,
 					'caption' => $id->caption,
@@ -45,6 +48,7 @@ class Dashboard extends CI_Controller
 
 		$data['api'] = $id_media;
 
+		// Kirim data ke view
 		$this->load->view('index', $data);
 	}
 }

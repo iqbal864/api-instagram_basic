@@ -5,7 +5,7 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark">Dashboard</h1>
+					<h1 class="m-0 text-dark">Instagram</h1>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
 		</div><!-- /.container-fluid -->
@@ -17,8 +17,11 @@
 		<div class="container-fluid">
 			<!-- Small boxes (Stat box) -->
 
+			<!-- Get Username Instagram -->
 			<h5 class="text-center">@<?= $api1->username ?></h5>
 			<div class="row">
+
+				<!-- Embed Postingan Instagram hanya menggunakan permalink yang diambil dari Controller -->
 				<?php foreach ($api as $ap) : ?>
 					<div class="col">
 						<blockquote class="instagram-media shadow  mb-5 bg-white rounded" data-instgrm-captioned data-instgrm-permalink="<?= $ap['permalink'] ?>?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
